@@ -14,10 +14,10 @@ Client.on("ready", function(){
 ///////////////////////////////////DMs FUNCTION\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 Client.on('message', message => {
-    if(message.channel.type === "dm"){
+    if(message.channel.type === "dm"){//Only Works if it's a private message
         var args = message.content.split(" ").slice(0).join(" ")
-        var ChannelToSend = Client.channels.get("508306653607755776")
-        var BotID = "508311935155175436"
+        var ChannelToSend = Client.channels.get("CHANNEL_ID")//where you want the reports to arrive
+        var BotID = "YOUR_BOT_ID"
 
         if(args.length > 256) return message.channel.send("Ton message contient trop de caractères...")
         if(message.author.id === BotID) return;
