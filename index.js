@@ -1,3 +1,6 @@
+/**
+!!! TOUTE MODIFICATION DE CE BOT DOIT ÊTRE DEMANDÉ À JOCKERIDER199 !!!
+*/
 //////////////////////////////////////REQUIREMENTS\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 const Discord = require('discord.js');
 const Client = new Discord.Client()
