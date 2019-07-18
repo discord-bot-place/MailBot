@@ -1,6 +1,0 @@
-{
-    "TOKEN" : "Token de votre bot",
-    "BOT_ID" : "ID de votre bot",
-    "CHANNEL_ID" : "Là où le message sera envoyé",
-    "ACTIVITY" : "Exemple : Envoie moi un message privé pour contacter le staff"
-}
