@@ -1,6 +1,15 @@
 {
-    "TOKEN" : "Token de votre bot",
-    "BOT_ID" : "ID de votre bot",
-    "CHANNEL_ID" : "Là où le message sera envoyé",
-    "ACTIVITY" : "Exemple : Envoie moi un message privé pour contacter le staff"
+    "token" : "NTkxNTMwMTkwMDk0NTk4MTQ0.XStTWA.tiU-ihPdEvVB8zz0ANbJDWFcpYI",
+    "channel" : "599618064673406976",
+    "presences" : [
+        {
+            "name" : "The playing activity",
+            "type" : "The activity type"
+        },
+        {
+
+        }
+    ],
+    "OwnerID" : "",
+    "prefix" : "/"
 }
