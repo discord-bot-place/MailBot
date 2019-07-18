@@ -1,0 +1,15 @@
+{
+    "token" : "Your bot token",
+    "channel" : "The channel ID where the bot send the messages",
+    "presences" : [
+        {
+            "name" : "The playing activity",
+            "type" : "The activity type"
+        },
+        {
+
+        }
+    ],
+    
+    "prefix" : ""
+}
