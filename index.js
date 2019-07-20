@@ -49,6 +49,12 @@ function loadAll(){ // This function load everything
 client.on("ready", () => {
     console.log("Ready !")
     loadAll()
+    client.setInterval(() => {
+        var index = Math.floor(Math.random() * config.presences.length)
+        var chosen = config.presences[index];
+
+        client.user.setActivity(chosen.name, {type : chosen.type})
+    }, 4000)
 })
 
 client.login(client.config.token)
