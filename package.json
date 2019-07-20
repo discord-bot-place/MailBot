@@ -5,13 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": "node src/index.js"
   },
   "author": "JockeRider199",
   "license": "ISC",
   "dependencies": {
     "discord.js": "github:discordjs/discord.js",
-    "chalk": "^2.4.1",
-    "ms": "^2.1.1"
+    "fs": "0.0.1-security",
+    "path": "0.12.7"
   }
 }
