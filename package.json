@@ -10,7 +10,7 @@
   "author": "JockeRider199",
   "license": "ISC",
   "dependencies": {
-    "discord.js": "github:discordjs/discord.js",
+    "discord.js": "^11.5.1",
     "fs": "0.0.1-security",
     "path": "0.12.7"
   }

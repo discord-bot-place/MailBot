@@ -47,6 +47,7 @@ function loadAll(){ // This function load everything
 
 client.on("ready", () => {
     console.log("Ready !")
+    console.log(`Discord : ${Discord.version}`)
     loadAll()
     client.setInterval(() => {
         var index = Math.floor(Math.random() * config.presences.length)

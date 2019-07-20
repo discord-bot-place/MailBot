@@ -5,9 +5,9 @@ exports.run = async (client, msg, args) => {
     msg.delete().catch(() => {});
 
     var newMsg = await msg.channel.send("Pinginnnnnng...");
-    var embed = new Discord.MessageEmbed()
+    var embed = new Discord.RichEmbed()
         .setColor("RANDOM")
-        .addField("Ping API", Math.floor(client.ws.ping) + "ms")
+        .addField("Ping API", Math.floor(client.ping) + "ms")
         .addField("Ping Bot", (newMsg.createdTimestamp - msg.createdTimestamp) + "ms")
     
     newMsg.delete()

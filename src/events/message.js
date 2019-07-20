@@ -26,12 +26,12 @@ module.exports = (client, msg) => {
 
         var channel = client.channels.get(client.config.channel);
         var reports = []
-        var embed = new Discord.MessageEmbed()
+        var embed = new Discord.RichEmbed()
             .setColor("RANDOM")
-            .setAuthor("New message from : " + msg.author.tag, msg.author.avatarURL())
+            .setAuthor("New message from : " + msg.author.tag, msg.author.avatarURL)
             .addField("Content", "```\n" + msg.content + "\n```")
             .addField("User Informations", `ID : ${msg.author.id}\nTag : ${msg.author.tag}\nMention : ${channel.guild.member(msg.author)}`)
-            .setFooter("MailBot")
+            .setFooter("MailBot")   
 
         channel.send(embed);
         msg.react("📮");

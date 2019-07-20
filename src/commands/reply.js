@@ -14,9 +14,9 @@ exports.run = (client, msg, args) => {
 
     user.send("```\n" + content + "\n```")
     .then(() => {
-        var embed = new Discord.MessageEmbed()
+        var embed = new Discord.RichEmbed()
             .setColor("ff000")
-            .setAuthor(`Reply to ${user.tag}`, msg.author.avatarURL())
+            .setAuthor(`Reply to ${user.tag}`, msg.author.avatarURL)
             .addField("Content", content)
             .addField("To user", `ID : ${user.id}\nTag : ${user.tag}\nMention : ${msg.guild.member(user)}`)
             msg.channel.send(embed)
