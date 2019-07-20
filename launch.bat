@@ -1,3 +1,3 @@
 @echo off
 title MailBot
-node index.js
+node src/index.js
