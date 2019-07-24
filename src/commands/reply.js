@@ -5,11 +5,20 @@ exports.run = (client, msg, args) => {
     msg.delete().catch(() => {});
 
     if(!msg.member.permissions.has("ADMINISTRATOR")) return msg.channel.send("This command require ADMINISTRATOR permission");
+    
+    var user = "";
 
-    var user = client.users.get(args[1]);
+    if(isNaN(args[1])){
+
+        if(!msg.mentions.users.first()) return msg.channel.send("You have to mention or give the id to dm a user !");
+        
+        user = msg.mentions.users.first();
+    }else{
+
+        user = client.users.get(args[1]);
+    }
+
     var content = args.slice(2).join(" ");
-
-    if(!user) return msg.reply(" you must give the id of the user to dm !");
     if(!content) return msg.reply(" you have to tell me what do I have to send !");
 
     user.send("```\n" + content + "\n```")

@@ -3,7 +3,8 @@ const Discord = require('discord.js'),
 client = new Discord.Client(),
 config = require('../config.js'),
 fs = require("fs"),
-path = require("path");
+path = require("path"),
+chalk = require("chalk");
 
 client.config = config;
 /////////////////////////////////////HANDLERS\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -43,12 +44,27 @@ function loadAll(){ // This function load everything
     loadEvents()
 }
 
+client.reloadDB = function(){
+    delete require.cache[require.resolve(`${__dirname}${path.sep}blacklisted.json`)];
+}
+
 /////////////////////////////////////CLIENT LOGIN\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 client.on("ready", () => {
-    console.log("Ready !")
-    console.log(`Discord : ${Discord.version}`)
     loadAll()
+    setTimeout(() => {
+        console.clear();
+        console.log(chalk.red.underline.bold(`Bot ModMail Discord\n`));
+        console.log(chalk.magentaBright(`=> Made by JockeRider199\n=> Template Version : ${require("../package.json").version}`));
+        console.log("-----------------------------------------------");
+        console.log(chalk.blue(`=> Client tag :      [ ${client.user.tag} ]`));
+        console.log(chalk.blue(`=> Discord Version : [ ${Discord.version} ]`));
+        console.log(chalk.blue(`=> Total Users :     [ ${client.users.size} ]`));
+        console.log("-----------------------------------------------");
+        console.log(chalk.green("--> Client ready !"));
+        console.log("-------------------------\n")
+    }, 1500);
+
     client.setInterval(() => {
         var index = Math.floor(Math.random() * config.presences.length)
         var chosen = config.presences[index];
@@ -56,5 +72,9 @@ client.on("ready", () => {
         client.user.setActivity(chosen.name, {type : chosen.type})
     }, 4000)
 })
+
+.on("error", e => console.log(e))
+.on("disconnect", e => console.log(e))
+.on("warn", e => console.log(e))
 
 client.login(client.config.token)

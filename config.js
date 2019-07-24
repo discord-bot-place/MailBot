@@ -1,9 +1,12 @@
 module.exports = {
 
-    token : "Your bot token",
+    /* Bot's token */
+    token : "",
 
-    channel : "The channel where the messages will be sent",
+    /* The channel where the messages will be sent */
+    channel : "",
 
+    /* The playing activity ( you can add others )*/
     presences : [
         {
             "name" : "Sent me a dm to contact the staff",
@@ -11,7 +14,12 @@ module.exports = {
         }
     ],
 
-    OwnerID : "The bot'owner ID",
-    
-    prefix : "The bot's prefix"
+    /* The user ID of the discord bot owner */
+    OwnerID : "",
+
+    /* The bot's prefix */
+    prefix : "",
+
+    /* If the bot use message embeds (true or null) */
+    embeds : null
 }

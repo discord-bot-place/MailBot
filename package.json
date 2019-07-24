@@ -1,6 +1,6 @@
 {
   "name": "mailbot",
-  "version": "1.0.0",
+  "version": "1.5.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -10,8 +10,10 @@
   "author": "JockeRider199",
   "license": "ISC",
   "dependencies": {
+    "chalk": "^2.4.2",
     "discord.js": "^11.5.1",
     "fs": "0.0.1-security",
+    "lowdb": "^1.0.0",
     "path": "0.12.7"
   }
 }

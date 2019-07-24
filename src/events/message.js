@@ -1,4 +1,5 @@
 const Discord = require("discord.js");
+var bl = require("../blacklisted.json");
 
 module.exports = (client, msg) => {
     
@@ -24,6 +25,8 @@ module.exports = (client, msg) => {
 
     if(!msg.guild && !msg.content.startsWith(client.config.prefix)){
 
+        if(bl.includes(msg.author.id)) return msg.channel.send(":x: Vous êtes blacklisté pour l'utilisation de ce bot !");
+
         var channel = client.channels.get(client.config.channel);
         var reports = []
         var embed = new Discord.RichEmbed()
@@ -31,9 +34,23 @@ module.exports = (client, msg) => {
             .setAuthor("New message from : " + msg.author.tag, msg.author.avatarURL)
             .addField("Content", "```\n" + msg.content + "\n```")
             .addField("User Informations", `ID : ${msg.author.id}\nTag : ${msg.author.tag}\nMention : ${channel.guild.member(msg.author)}`)
-            .setFooter("MailBot")   
+            if(msg.attachments.array()[0]){
+                embed.setImage(msg.attachments.array()[0].url)
+            }
+            embed.setFooter("MailBot")   
 
-        channel.send(embed);
+        if(msg.attachments && !msg.content){
+            var embed2 = new Discord.RichEmbed()
+                .setColor("RANDOM")
+                .setAuthor(`New Image from : ${msg.author.tag}`, msg.author.avatarURL)
+                .setImage(msg.attachments.array()[0].url)
+
+            channel.send(embed2);
+        }
+        else{
+            channel.send(embed);
+        }
+
         msg.react("📮");
         reports.push(msg.author.id)
     }
